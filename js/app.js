@@ -21,7 +21,7 @@
 const navLinksContainer = document.getElementById('navbar__list');
 //navLinks left empty to be populated for each section by buildNav function 
 let navLinks = ``;
-//grab all sections in the html via the <section> tag
+//grab all sections in the html via the <section> tags
 const sections = document.getElementsByTagName('section');
 /**
  * End Global Variables
@@ -55,7 +55,7 @@ const buildNav = () => {
 };
 
 //wait for dom to load before adding navbar elements
-document.addEventListener('domContentLoaded', buildNav());
+//document.addEventListener('domContentLoaded', buildNav())
 
 
 // Add class 'active' to section when near top of viewport
@@ -88,7 +88,7 @@ const sectionCheck = () => {
 };
 
 //added event listener for scrolling the window
-window.addEventListener('scroll', sectionCheck);
+//window.addEventListener('scroll', sectionCheck)
 
 
 // Scroll to anchor ID using scrollTO event
@@ -101,9 +101,9 @@ window.addEventListener('scroll', sectionCheck);
 */
 
 // Build menu 
-
+document.addEventListener('domContentLoaded', buildNav())
 // Scroll to section on link click
 
 // Set sections as active
-
+window.addEventListener('scroll', sectionCheck)
 
