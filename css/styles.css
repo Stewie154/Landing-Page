@@ -67,11 +67,23 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .navbar__menu li {
     display: inline-block;
+}
+
+.navbar__menu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar__menu li a:hover {
+    text-decoration: none;
+    color: #fff;
 }
 
 .navbar__menu .menu__link {
