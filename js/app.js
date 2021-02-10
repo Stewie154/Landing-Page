@@ -60,6 +60,36 @@ document.addEventListener('domContentLoaded', buildNav());
 
 // Add class 'active' to section when near top of viewport
 
+//function to get a number of how far away a section is from the top of the viewport
+const topProp = (section) => {
+    //uses getBoundingClientRect to return the top property of the section. (relative to the top of the viewport)
+    return Math.floor(section.getBoundingClientRect().top);
+};
+
+//add the active class
+const addActiveClass = (section) => {
+    section.classList.add('your-active-class');
+};
+
+//remove the active class
+const removeActiveClass = (section) => {
+    section.classList.remove('your-active-class');
+};
+
+//checks to see where each section is relative to top of viewport (using number generated from topProp function), adds / removes active class accordingly
+const sectionCheck = () => {
+    for(section of sections) {
+        const topNum = topProp(section);
+        //ternary operator checks the topNum number, adds / removes class using previously defined functions
+        topNum > -300 && topNum < 400 ? addActiveClass(section) : removeActiveClass(section);
+
+        //console.log(topNum); (this console log was used to see which numbers I needed to be checking for)
+    }
+};
+
+//added event listener for scrolling the window
+window.addEventListener('scroll', sectionCheck);
+
 
 // Scroll to anchor ID using scrollTO event
 
